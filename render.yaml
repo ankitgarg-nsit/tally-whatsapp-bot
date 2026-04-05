@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: tally-whatsapp-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: TALLY_HOST
+        value: 103.155.204.11
+      - key: TALLY_PORT
+        value: 45286
+      - key: PYTHON_VERSION
+        value: 3.11.0
